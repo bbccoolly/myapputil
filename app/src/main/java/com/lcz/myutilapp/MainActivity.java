@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity
         mFragmentList.add(FragmentKotlin.getInstance());
         MainFragmentAdapter fragmentAdapter = new MainFragmentAdapter(getSupportFragmentManager(), mFragmentList);
         mViewPager.setAdapter(fragmentAdapter);
+        mViewPager.setOffscreenPageLimit(3);
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i1) {

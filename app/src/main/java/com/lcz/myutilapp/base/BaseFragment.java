@@ -57,18 +57,18 @@ public abstract class BaseFragment extends Fragment {
 
     protected abstract void process(Bundle savedInstanceState);
 
-    private void initView() {
+    protected void initView() {
 
     }
 
-    private void initTitle() {
+    protected void initTitle() {
     }
 
-    private void initViewListener() {
+    protected void initViewListener() {
 
     }
 
-    private boolean registerEventBus() {
+    protected boolean registerEventBus() {
         return false;
     }
 
