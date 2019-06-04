@@ -13,4 +13,7 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+    <string name="title_kotlin">Kotlin</string>
+    <string name="title_qmui">QMUI</string>
+    <string name="title_home">Home</string>
 </resources>
