@@ -4,25 +4,34 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.view.ViewPager;
-import android.view.View;
-import android.support.v4.view.GravityCompat;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.view.MenuItem;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
-
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.widget.Toast;
+import android.view.MenuItem;
+import android.view.View;
+
+import com.lcz.myutilapp.base.BaseFragment;
+import com.lcz.myutilapp.ui.adapter.MainFragmentAdapter;
+import com.lcz.myutilapp.ui.fragment.FragmentHome;
+import com.lcz.myutilapp.ui.fragment.FragmentKotlin;
+import com.lcz.myutilapp.ui.fragment.FragmentQMUI;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private ViewPager mViewPager;
     private BottomNavigationView mNavigationView;
+    private List<BaseFragment> mFragmentList = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,16 +62,38 @@ public class MainActivity extends AppCompatActivity
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case R.id.navigation_1:
-                        Toast.makeText(MainActivity.this, "1", Toast.LENGTH_SHORT).show();
+                        mViewPager.setCurrentItem(0);
                         return true;
                     case R.id.navigation_2:
-                        Toast.makeText(MainActivity.this, "2", Toast.LENGTH_SHORT).show();
+                        mViewPager.setCurrentItem(1);
                         return true;
                     case R.id.navigation_3:
-                        Toast.makeText(MainActivity.this, "3", Toast.LENGTH_SHORT).show();
+                        mViewPager.setCurrentItem(2);
                         return true;
                 }
                 return false;
+            }
+        });
+        mFragmentList.clear();
+        mFragmentList.add(FragmentHome.getInstance());
+        mFragmentList.add(FragmentQMUI.getInstance());
+        mFragmentList.add(FragmentKotlin.getInstance());
+        MainFragmentAdapter fragmentAdapter = new MainFragmentAdapter(getSupportFragmentManager(), mFragmentList);
+        mViewPager.setAdapter(fragmentAdapter);
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int i, float v, int i1) {
+
+            }
+
+            @Override
+            public void onPageSelected(int i) {
+                mNavigationView.setSelectedItemId(i);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int i) {
+
             }
         });
     }

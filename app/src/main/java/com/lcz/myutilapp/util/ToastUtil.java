@@ -9,7 +9,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lcz.myutilapp.R;
-import com.lcz.myutilapp.base.App;
 
 /**
  * desc TODO
@@ -20,11 +19,11 @@ public class ToastUtil {
     private static Toast sMidToast;
 
     @SuppressLint("ShowToast")
-    public static void show(CharSequence content) {
+    public static void show(Context context, CharSequence content) {
         if (null == sToast) {
             synchronized (ToastUtil.class) {
                 if (null == sToast) {
-                    sToast = Toast.makeText(App.getContext(), "", Toast.LENGTH_SHORT);
+                    sToast = Toast.makeText(context, "", Toast.LENGTH_SHORT);
                 }
             }
         }
@@ -33,11 +32,11 @@ public class ToastUtil {
     }
 
     @SuppressLint("ShowToast")
-    public static void show(int contentId) {
+    public static void show(Context context, int contentId) {
         if (null == sToast) {
             synchronized (ToastUtil.class) {
                 if (null == sToast) {
-                    sToast = Toast.makeText(App.getContext(), "", Toast.LENGTH_SHORT);
+                    sToast = Toast.makeText(context, "", Toast.LENGTH_SHORT);
                 }
             }
         }
@@ -45,8 +44,8 @@ public class ToastUtil {
         sToast.show();
     }
 
-    public static void showMiddle(String content) {
-        sMidToast = createToast(App.getContext(), content);
+    public static void showMiddle(Context context, String content) {
+        sMidToast = createToast(context, content);
         sMidToast.setDuration(Toast.LENGTH_SHORT);
         sMidToast.show();
     }
@@ -61,7 +60,8 @@ public class ToastUtil {
         }
 
         tempToast = new Toast(context.getApplicationContext());
-        tempToast.setGravity(Gravity.CENTER | Gravity.TOP, 0, 528);
+//        tempToast.setGravity(Gravity.CENTER | Gravity.TOP, 0, 528);
+        tempToast.setGravity(Gravity.CENTER,0,0);
         tempToast.setDuration(Toast.LENGTH_LONG);
         tempToast.setView(layout);
         return tempToast;
