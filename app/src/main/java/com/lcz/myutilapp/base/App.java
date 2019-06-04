@@ -6,6 +6,9 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 
+import com.lcz.myutilapp.widget.qmui.QMUISwipeBackActivityManager;
+import com.orhanobut.hawk.Hawk;
+
 /**
  * desc TODO
  * Created by lcz on 2019/6/4.
@@ -53,5 +56,10 @@ public class App extends Application {
         mainLooper = getMainLooper();
         mainHandler = new Handler();
         mainThreadId = android.os.Process.myTid();
+
+        //滑动返回初始化
+        QMUISwipeBackActivityManager.init(this);
+
+        Hawk.init(this).build();
     }
 }
