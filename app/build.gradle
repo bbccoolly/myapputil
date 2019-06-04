@@ -12,9 +12,22 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            buildConfigField("boolean", "DEBUGABLE", "false")
+            minifyEnabled true //开启混淆
+            zipAlignEnabled true //Zipalign优化
+            shrinkResources true //删除没有用到的资源
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+
+        debug {
+            buildConfigField("boolean", "DEBUGABLE", "true")
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+
     }
 }
 
@@ -27,4 +40,11 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //qmui
+    implementation 'com.qmuiteam:qmui:1.2.0'
+
+    //butterknife
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }
