@@ -1,11 +1,13 @@
 package com.lcz.myutilapp.ui.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.lcz.myutilapp.R;
 import com.lcz.myutilapp.base.BaseFragment;
+import com.lcz.myutilapp.ui.activity.SunFlowerActivity;
 import com.lcz.myutilapp.ui.adapter.MainRecyclerViewAdapter;
 
 import java.util.ArrayList;
@@ -54,6 +56,7 @@ public class FragmentKotlin extends BaseFragment {
                 switch (position) {
                     case 0:
                     case 1:
+                        startActivity(new Intent(mContext, SunFlowerActivity.class));
                         break;
                 }
             }
