@@ -21,7 +21,7 @@
 
     <fragment
         android:id="@+id/garden_fragment"
-        android:name="com.lcz.myutilapp.ui.fragment.GardenFragment"
+        android:name="com.lcz.mua.ui.fragment.GardenFragment"
         android:label="@string/my_garden_title"
         tools:layout="@layout/fragment_garden">
 
@@ -36,7 +36,7 @@
 
     <fragment
         android:id="@+id/plant_list_fragment"
-        android:name="com.lcz.myutilapp.ui.fragment.PlantListFragment"
+        android:name="com.lcz.mua.ui.fragment.PlantListFragment"
         android:label="@string/plant_list_title"
         tools:layout="@layout/fragment_plant_list">
 
@@ -51,7 +51,7 @@
 
     <fragment
         android:id="@+id/plant_detail_fragment"
-        android:name="com.lcz.myutilapp.ui.fragment.PlantDetailFragment"
+        android:name="com.lcz.mua.ui.fragment.PlantDetailFragment"
         android:label="@string/plant_details_title"
         tools:layout="@layout/fragment_plant_detail">
         <argument
