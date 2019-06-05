@@ -19,8 +19,9 @@ package com.lcz.mua.widget.qmui;
 import android.annotation.SuppressLint;
 import android.content.res.Configuration;
 import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 
 //Fix the bug: Only fullscreen activities can request orientation in Android version 26, 27

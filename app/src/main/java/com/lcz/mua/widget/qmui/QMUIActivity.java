@@ -19,11 +19,12 @@ package com.lcz.mua.widget.qmui;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+
+import androidx.annotation.Nullable;
 
 import com.lcz.mua.R;
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;

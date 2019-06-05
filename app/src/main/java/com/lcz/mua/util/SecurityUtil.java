@@ -5,11 +5,12 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.os.CancellationSignal;
 import android.os.IBinder;
-import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import androidx.cardview.widget.CardView;
 
 import com.lcz.mua.R;
 import com.lcz.mua.widget.themed.ThemedIcon;
@@ -110,7 +111,7 @@ public class SecurityUtil {
             fingerprintIcon.setVisibility(View.GONE);
         }
 
-        dialog.getButton(android.support.v7.app.AlertDialog.BUTTON_POSITIVE).setOnClickListener(v -> {
+        dialog.getButton(androidx.appcompat.app.AlertDialog.BUTTON_POSITIVE).setOnClickListener(v -> {
             if (checkPassword(editTextPassword.getText().toString())) {
                 hideKeyboard(activity, editTextPassword.getWindowToken());
                 mCancellationSignal.cancel();

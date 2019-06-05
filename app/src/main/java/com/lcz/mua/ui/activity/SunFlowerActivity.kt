@@ -1,10 +1,9 @@
 package com.lcz.mua.ui.activity
 
-import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v4.view.GravityCompat
-import android.support.v4.widget.DrawerLayout
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
+import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.AppBarConfiguration
@@ -19,7 +18,7 @@ import com.lcz.mua.R
  */
 class SunFlowerActivity : AppCompatActivity() {
 
-    private lateinit var mDrawerLayout: DrawerLayout
+    private lateinit var mDrawerLayout: androidx.drawerlayout.widget.DrawerLayout
     private lateinit var mAppBarConfiguration: AppBarConfiguration
     private lateinit var mNavController: NavController
 
