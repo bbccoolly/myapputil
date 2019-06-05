@@ -6,7 +6,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
-import com.google.gson.Gson;
 import com.lcz.myutilapp.R;
 import com.lcz.myutilapp.base.APIService;
 import com.lcz.myutilapp.base.BaseFragment;
