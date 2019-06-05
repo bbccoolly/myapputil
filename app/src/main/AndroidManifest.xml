@@ -29,7 +29,7 @@
 
         <activity
             android:name="com.lcz.mua.ui.activity.FingerActivity"
-            android:label="指纹安全" />
+            android:label="@string/active_security" />
 
         <activity
             android:name="com.lcz.mua.ui.activity.SunFlowerActivity"
