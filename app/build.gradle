@@ -77,4 +77,13 @@ dependencies {
     //navigation
     implementation 'androidx.navigation:navigation-fragment-ktx:2.1.0-alpha04'
     implementation 'androidx.navigation:navigation-ui-ktx:2.1.0-alpha04'
+    implementation "androidx.room:room-runtime:2.1.0-rc01"
+    annotationProcessor "androidx.room:room-compiler:2.1.0-rc01"
+
+    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycleVersion"
+
+
+
 }
